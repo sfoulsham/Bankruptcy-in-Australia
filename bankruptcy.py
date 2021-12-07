@@ -227,3 +227,22 @@ plt.show()
 # This chart would adjust well to more data as the relationship between variables would become more accurate and scales would remain the same. 
 
 
+# Looking at the word cloud, we chose the black background to contrast our white report.
+# We also chose varying word sizes to demonstrate frequency and for visual intrigue.
+# And an 8x8 size to prevent displaying an overwhelming amount of information. 
+# We removed the axes as they provided no useful information and chose the word cloud chart style.
+# This is because it acts as a quick glance for readers to understand bankruptcy in Australia and contrasts the information-heavy charts to follow. 
+# We believe this chart effectively communicates a snapshot of bankruptcy in Australia while being visually intriguing.
+# The adaptability of this chart to new data depends on the spread.
+# If data were clustered, it would adjust well as new words would appear.
+# However, if there were many unique causes of bankruptcy, they might be overpowered by reasons like unemployment or health and not show up on the graph.
+
+
+# Lastly, let’s discuss encoding within our frequency bar chart.
+# We kept the color uniform and simple as the main purpose is not to understand the difference between columns but rather the words featured and their frequency. 
+# We chose this chart style because it compliments the word cloud very well while providing a more concrete understanding of common bankruptcy-related words. 
+# We also removed valueless words such as “or”, “of”, and, “in” to prevent them from appearing on the axis. 
+# We believe this chart is effective to an extent, words like unemployment, credit, loss, payments, interest, and selling are intuitive.
+# However words like including (the most frequent word), use, and facilities provide little insight.
+# With that being said, we believe in combination with the word cloud, this chart does provide useful insight. 
+# It also would adapt well to greater amounts of data as the trends in bankruptcy causes would become more prominent.
