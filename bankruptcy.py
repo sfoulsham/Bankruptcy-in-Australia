@@ -212,3 +212,18 @@ plt.xticks([r + barWidth for r in range(len(Population))], ["ACT", "NSW", "NT", 
 plt.legend()
 plt.show()
 
+
+# Let’s discuss encoding decisions within the comparative bar plot above. 
+# We chose to make the bankruptcy records column the most distinct color as we’re trying to understand how other variables relate to it. 
+# We made the two columns with the strongest relationship (population and number of bankruptcy records) have the two stronger colors (navy and salmon).
+# We did so to improve chart readability. 
+# We also chose different saturations to improve readability amongst color blind people.
+# In terms of decisions about chart style and scale, we chose to abbreviate state names for visual simplicity.
+# We also adjusted each dataset column to fit the scale from 0 to 1 (percentage of total). 
+# We chose the comparative histogram because we felt it was the most intuitive design for comparing three quantitative variables by one categorical. 
+# We believe this chart effectively communicates that high income in relation to population has an association with fewer bankruptcies.
+# This can be seen with ACT, NT, SA, Tas, and WA.
+# It also communicated that states with high population with lesser income experience high bankruptcy rates as seen with NSW, Qld, and Vic. 
+# This chart would adjust well to more data as the relationship between variables would become more accurate and scales would remain the same. 
+
+
