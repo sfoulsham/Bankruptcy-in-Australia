@@ -111,30 +111,11 @@ df["Average Weekly Pay by Sex and State and year"].value_counts(bins = [500, 700
 # This is useful background knowledge when further analyzing how bankruptcy relates to these states in particular. 
 
 
-# Let’s move onto the third chart 
-# Creating a dictionary for what percentage of the total population each state is 
-av_pop_by_state = df.groupby("State of Debtor")["Population by sex and state and year"].mean().to_dict()
-sum_of_av_pops = df.groupby("State of Debtor")["Population by sex and state and year"].mean().sum()
-percent_of_total_pop = {}
-for key in av_pop_by_state:
-    percent_of_total_pop[key] = round(av_pop_by_state[key]/sum_of_av_pops, 3)
-
-
-# Now for income, what percentage of the total weekly income is each state
-av_income_by_state = df.groupby("State of Debtor")["Average Weekly Pay by Sex and State and year"].mean().to_dict()
-sum_of_av_incomes = df.groupby("State of Debtor")["Average Weekly Pay by Sex and State and year"].mean().sum()
-percent_of_total_income = {}
-for key in av_income_by_state:
-   percent_of_total_income[key] = round(av_income_by_state[key]/sum_of_av_incomes, 3)
-
-
-# Now for bankruptcy records, what percentage of the total records is each state 
-total_records = 356500
-records_by_state = df["State of Debtor"].value_counts().to_dict()
-percent_of_total_records = {}
-for key in records_by_state:
-    percent_of_total_records[key] = round(records_by_state[key]/total_records, 3)
-# The percentages of these dictionaries add up to 1, 0.99, and 0.995
+# We’ll now visualise the categorical column “Main Cause of Insolvency” in relation to the frequency of these insolvencies.
+# We will do so through a word cloud and interactive bar plot. 
+# These graphs utilise two attributes, one categorical and one numerical. 
+# We’ll also explore the relationship between state, population, weekly pay, and value counts for state through the third chart.
+# The third chart summarizes four attributes, three being numerical and one categorical. 
 
 
 # Import some modules and packages 
@@ -181,6 +162,32 @@ fig = plt.figure(figsize = (8,8), facecolor = None)
 plt.imshow(wordcloud)
 plt.axis("off")
 plt.show()
+
+
+# Let’s move onto the third chart 
+# Creating a dictionary for what percentage of the total population each state is 
+av_pop_by_state = df.groupby("State of Debtor")["Population by sex and state and year"].mean().to_dict()
+sum_of_av_pops = df.groupby("State of Debtor")["Population by sex and state and year"].mean().sum()
+percent_of_total_pop = {}
+for key in av_pop_by_state:
+    percent_of_total_pop[key] = round(av_pop_by_state[key]/sum_of_av_pops, 3)
+
+
+# Now for income, what percentage of the total weekly income is each state
+av_income_by_state = df.groupby("State of Debtor")["Average Weekly Pay by Sex and State and year"].mean().to_dict()
+sum_of_av_incomes = df.groupby("State of Debtor")["Average Weekly Pay by Sex and State and year"].mean().sum()
+percent_of_total_income = {}
+for key in av_income_by_state:
+   percent_of_total_income[key] = round(av_income_by_state[key]/sum_of_av_incomes, 3)
+
+
+# Now for bankruptcy records, what percentage of the total records is each state 
+total_records = 356500
+records_by_state = df["State of Debtor"].value_counts().to_dict()
+percent_of_total_records = {}
+for key in records_by_state:
+    percent_of_total_records[key] = round(records_by_state[key]/total_records, 3)
+# The percentages of these dictionaries add up to 1, 0.99, and 0.995
 
 
 # Let’s create the bar plot
