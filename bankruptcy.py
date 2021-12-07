@@ -1,4 +1,17 @@
 
+# This code explores the relationship between wealth, population, and bankruptcy records and establishes association. 
+# It analyses the columns “Population by sex and state and year,” “Average weekly pay by sex and state and year,” and “State of debtor”.
+# Two of these columns are numerical and two are categorical. 
+
+
+# First, we calculated which state has the greatest average weekly pay and the greatest average population. 
+# We then found the overall average weekly pay and overall average population. 
+# We were curious to see if as population increases, bankruptcy records also increase.
+# Or if there is a particular state that is disproportionately affected by bankruptcy despite their low population. 
+# We also wanted to see whether if as wealth increases, bankruptcy likelihood also increases. 
+# See code for the first grouped-aggregation below.
+
+
 # Import pandas and load in the data
 import pandas as pd
 import numpy as np
@@ -65,6 +78,17 @@ pays_by_state.round(decimals = 2)
 
 # What's the average, average weekly pay
 round(df["Average Weekly Pay by Sex and State and year"].mean(), 2)
+
+
+# Our findings are that New South Wales has the greatest average population across the 11 years with 3,665,836 people.
+# Compare this to the overall average of 2,617,890.
+# New South Wales also has the largest number of debtors with 116,705 records. 
+# This suggests a possible association between increased population and increased bankruptcy. 
+# We also found that no state is disproportionately affected by bankruptcy.
+# This is because the percentage of the population that has bankruptcy records is between 2.08% and 4.22% for every state. 
+# Australian Capital Territory had the greatest average weekly pay with $1,202 ($954 was the overall average). 
+# This is interesting because ACT had the second lowest number of recorded bankruptcies.
+# Meaning higher income might have an association with fewer bankruptcies. 
 
 
 # Let’s find the most frequently occuring state for each income bracket
