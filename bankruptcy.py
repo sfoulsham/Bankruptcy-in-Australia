@@ -169,9 +169,3 @@ plt.xticks([r + barWidth for r in range(len(Population))], ["ACT", "NSW", "NT", 
 plt.legend()
 plt.show()
 
-
-# In[ ]:
-
-
-
-
