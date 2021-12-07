@@ -91,12 +91,24 @@ round(df["Average Weekly Pay by Sex and State and year"].mean(), 2)
 # Meaning higher income might have an association with fewer bankruptcies. 
 
 
+# Our second grouped-aggregation is based on numerical bins.
+# We found the most frequently occurring state for each income bracket within the average weekly pay column. 
+# We also found the overall number of data points for each income bracket. 
+# See code below.
+
+
 # Let’s find the most frequently occuring state for each income bracket
 df.groupby("State of Debtor")["Average Weekly Pay by Sex and State and year"].value_counts(bins = [500, 700, 900, 1100, 1300, 1500])
 
 
 # Let’s find the number of data points for each income bracket
 df["Average Weekly Pay by Sex and State and year"].value_counts(bins = [500, 700, 900, 1100, 1300, 1500]).sort_values(ascending=True)
+
+
+# Our findings are that most Australians earn between $900 to $1,100 per week.
+# The minority earn between $1,300 and $1,500 (the highest weekly income bracket). 
+# Australian Capital Territory is the most frequently occurring state for the highest income bracket, followed by Queensland, and New South Wales. 
+# This is useful background knowledge when further analyzing how bankruptcy relates to these states in particular. 
 
 
 # Let’s move onto the third chart 
